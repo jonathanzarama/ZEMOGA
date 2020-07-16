@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using ZEMOGA_JonathanZarama.Models;
+using ZEMOGA_JonathanZarama.Services;
+
+namespace ZEMOGA_JonathanZarama.Controllers
+{
+    public class PostController : Controller
+    {
+
+        IPostService _postService;
+
+        public PostController(IPostService PostService)
+        {
+            _postService = PostService;
+        }
+
+
+        // GET: Post
+        public ActionResult Index()
+        {
+            List<Post> ApprovedPost = _postService.ObtainApprovedPost();
+
+            return View(ApprovedPost);
+        }
+    }
+}

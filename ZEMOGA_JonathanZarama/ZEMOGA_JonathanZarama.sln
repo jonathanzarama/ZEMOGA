@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZEMOGA_JonathanZarama", "ZEMOGA_JonathanZarama.csproj", "{503F42D9-E1F5-4A4F-BC8C-C05B51938766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZEMOGA_JonathanZarama.Tests", "..\ZEMOGA_JonathanZarama.Tests\ZEMOGA_JonathanZarama.Tests.csproj", "{DDBA2BF8-2B5B-457A-9994-6B9828A2B21F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{503F42D9-E1F5-4A4F-BC8C-C05B51938766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503F42D9-E1F5-4A4F-BC8C-C05B51938766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{503F42D9-E1F5-4A4F-BC8C-C05B51938766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503F42D9-E1F5-4A4F-BC8C-C05B51938766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDBA2BF8-2B5B-457A-9994-6B9828A2B21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBA2BF8-2B5B-457A-9994-6B9828A2B21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBA2BF8-2B5B-457A-9994-6B9828A2B21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBA2BF8-2B5B-457A-9994-6B9828A2B21F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {058CD773-04C1-4403-B156-3D7AFE83065B}
+	EndGlobalSection
+EndGlobal

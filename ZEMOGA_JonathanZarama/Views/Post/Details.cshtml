@@ -1,0 +1,67 @@
+﻿@model ZEMOGA_JonathanZarama.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    String userRole = System.Web.HttpContext.Current.Session["userRole"].ToString();
+    String user = System.Web.HttpContext.Current.Session["user"].ToString();
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Post1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsApproved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <h4>COMMENTS</h4>
+
+    @foreach (var item in Model.commentsPost)
+    {
+        <div>@item.Name</div>
+
+        <div>@item.CommentPost</div>
+
+
+    }
+</div>
+    <p>
+        @{
+            if (userRole == "Writer")
+            {
+                <div>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+                </div>
+            }
+        <div>
+            @Html.ActionLink("Back to List", "Index", new { id = user })
+        </div>
+        }
+    </p>

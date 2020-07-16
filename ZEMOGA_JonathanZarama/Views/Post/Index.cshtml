@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ZEMOGA_JonathanZarama.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    String userRole = System.Web.HttpContext.Current.Session["userRole"].ToString();
+
+}
+@ViewBag.UserRole
+<h2>Index</h2>
+
+<p>
+    @{
+        if (userRole == "Writer")
+        {
+            @Html.ActionLink("Create New", "Create")
+
+        }
+
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Post1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Post1)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.IsApproved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </td>
+            <td>
+                @{
+                    if (userRole == "Writer")
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    }
+
+                }
+
+
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+
+
+
+                @{
+                    if (userRole == "Editor")
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    }
+                }
+                @{
+                    if (userRole == "Writer" && !item.IsApproved)
+                    {
+                        @Html.ActionLink("Submit", "Submit", new { id = item.ID })
+                    }
+                }
+            </td>
+        </tr>
+    }
+
+</table>
